@@ -20,7 +20,7 @@ interface Repository {
 }
 
 // Replace with your GitHub username
-const GITHUB_USERNAME = "octocat";
+const GITHUB_USERNAME = "juliospcruz";
 
 export function ProjectsSection() {
   const [repos, setRepos] = useState<Repository[]>([]);

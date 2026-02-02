@@ -16,7 +16,7 @@ import {
   SiNextdotjs,
   SiVuedotjs,
   SiAmazonwebservices,
-  SiFigma,
+  SiAngular,
 } from "react-icons/si";
 import { DiHtml5, DiCss3 } from "react-icons/di";
 import { useLanguage } from "./LanguageProvider";
@@ -39,7 +39,7 @@ const technologies = [
   { name: "Docker", icon: SiDocker, color: "#2496ED" },
   { name: "Git", icon: SiGit, color: "#F05032" },
   { name: "AWS", icon: SiAmazonwebservices, color: "#FF9900" },
-  { name: "Figma", icon: SiFigma, color: "#F24E1E" },
+  { name: "Angular", icon: SiAngular, color: "#F24E1E" },
 ];
 
 export function TechnologiesSection() {
