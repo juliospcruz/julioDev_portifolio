@@ -4,7 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: mode === "production" ? "/julioDev_portifolio/" : "/", // 👈 AQUI
+  base: mode === "production" ? "/julioDev_portifolio/" : "/",
 
   server: {
     host: "::",
