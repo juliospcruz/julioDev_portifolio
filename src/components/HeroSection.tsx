@@ -6,6 +6,11 @@ import { useLanguage } from "./LanguageProvider";
 export function HeroSection() {
   const { t } = useLanguage();
 
+  const scrollTo = (id: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-hero">
       {/* Background decoration */}
@@ -68,7 +73,7 @@ export function HeroSection() {
               className="bg-primary hover:bg-primary-hover text-primary-foreground font-semibold px-8 py-6 text-lg shadow-glow transition-all duration-300 hover:shadow-lg"
               asChild
             >
-              <a href="#projects">{t("hero.viewProjects")}</a>
+              <a href="#projects" onClick={scrollTo("projects")}>{t("hero.viewProjects")}</a>
             </Button>
             <Button
               variant="outline"
@@ -76,7 +81,7 @@ export function HeroSection() {
               className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold px-8 py-6 text-lg transition-all duration-300"
               asChild
             >
-              <a href="#contact">{t("hero.contactMe")}</a>
+              <a href="#contact" onClick={scrollTo("contact")}>{t("hero.contactMe")}</a>
             </Button>
           </motion.div>
 
@@ -118,7 +123,7 @@ export function HeroSection() {
           }}
           className="absolute bottom-4 left-1/2 -translate-x-1/2"
         >
-          <a href="#about" aria-label="Scroll to about section">
+          <a href="#about" onClick={scrollTo("about")} aria-label="Scroll to about section">
             <ArrowDown className="h-6 w-6 text-foreground-secondary" />
           </a>
         </motion.div>
