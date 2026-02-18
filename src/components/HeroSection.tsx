@@ -38,7 +38,7 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold mb-4"
           >
-            <span className="text-gradient">Júlio Dev</span>
+            <span className="text-gradient">Júlio Cruz</span>
           </motion.h1>
 
           {/* Title */}
