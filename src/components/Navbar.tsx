@@ -12,12 +12,21 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: t("nav.about"), href: "#about" },
-    { name: t("nav.projects"), href: "#projects" },
-    { name: t("nav.technologies"), href: "#technologies" },
-    { name: t("nav.experience"), href: "#experience" },
-    { name: t("nav.contact"), href: "#contact" },
+    { name: t("nav.about"), href: "about" },
+    { name: t("nav.projects"), href: "projects" },
+    { name: t("nav.technologies"), href: "technologies" },
+    { name: t("nav.experience"), href: "experience" },
+    { name: t("nav.contact"), href: "contact" },
   ];
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsMobileMenuOpen(false);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,7 +62,8 @@ export function Navbar() {
             {navLinks.map((link) => (
               <motion.a
                 key={link.href}
-                href={link.href}
+                href={`#${link.href}`}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className="text-sm font-medium text-foreground-secondary hover:text-primary transition-colors duration-200"
                 whileHover={{ y: -2 }}
                 whileTap={{ y: 0 }}
@@ -162,12 +172,12 @@ export function Navbar() {
               {navLinks.map((link, index) => (
                 <motion.a
                   key={link.href}
-                  href={link.href}
+                  href={`#${link.href}`}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
                   className="text-foreground-secondary hover:text-primary transition-colors py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}
                 </motion.a>
